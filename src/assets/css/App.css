@@ -1,0 +1,171 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .ico {
+    @apply rounded-full lg:w-12 lg:h-12 w-10 h-10 flex justify-center items-center cursor-pointer bg-white/50;
+  }
+  .ico-2 {
+    @apply flex w-5 h-5 justify-center items-center rounded-full bg-blue-1000;
+  }
+  .navItem {
+    @apply relative font-opensans font-semibold text-base text-cyan-50 block lg:py-0 lg:px-0 py-1 px-2 hover:text-blue-1000 transition ease-in-out duration-[350ms] cursor-pointer;
+  }
+  .navItem:after {
+    content: "";
+    @apply absolute -bottom-2 left-0 right-0 w-full h-[2px] lg:block hidden bg-blue-1000 opacity-0 hover:opacity-100 transition ease-in-out duration-[350ms];
+  }
+  .navItem.active {
+    @apply text-blue-1000 lg:bg-transparent bg-gray-300;
+  }
+  .navItem.active:after {
+    @apply opacity-100;
+  }
+  .hero-banner {
+    @apply relative;
+  }
+  .hero-banner__headline {
+    @apply font-opensans 
+      2xl:text-7xl 
+      xl:text-5xl 
+      lg:text-4xl
+      font-light leading-tight;
+  }
+  .btn {
+    @apply cursor-pointer bg-blue-1000 text-white font-semibold font-opensans lg:py-3 lg:px-8 py-2 px-3 lg:text-base text-sm;
+  }
+  .capsule-block {
+    @apply overflow-hidden rounded-[14rem];
+  }
+  .mini-card {
+    @apply 2xl:w-[98px]
+      xl:w-[70px] 
+      lg:w-[55px]
+      aspect-[98/87]
+      rounded-xl 
+      overflow-hidden;
+  }
+  .mini-card-holder {
+    @apply 2xl:w-[360px]
+      xl:w-[260px]
+      lg:w-[200px]
+      aspect-[360/113] 
+      rounded-xl;
+  }
+  .headline {
+    @apply font-bold lg:text-5xl text-4xl text-center px-4;
+  }
+  .checkbox-style input {
+    @apply opacity-0 absolute top-0 left-0;
+  }
+  .checkbox-style {
+    @apply flex items-center relative cursor-pointer;
+  }
+  .checkbox-style .checkmark {
+    @apply w-5 h-5 rounded-[4px] border-[#CCD1D2] border-2 block mr-2 relative;
+  }
+  .checkbox-style .checkmark .checked-ico {
+    @apply opacity-0 block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3 h-3 object-contain stroke-blue-1000;
+  }
+  .checkbox-style input:checked ~ .checkmark .checked-ico {
+    @apply opacity-100;
+  }
+  .input-number {
+    @apply border-none w-full outline-none bg-transparent;
+  }
+  .input-number::-webkit-outer-spin-button,
+  .input-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .input-number[type="number"] {
+    -moz-appearance: textfield;
+  }
+  .btn-border {
+    @apply border-blue-1000 rounded-xl border-2 cursor-pointer;
+  }
+  .dropdown-label {
+    @apply btn-border py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-lg bg-white text-gray-800 hover:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-gray-950 dark:border-gray-700 dark:text-white dark:hover:bg-gray-800 dark:focus:outline-none dark:focus:ring-1 dark:focus:ring-gray-600;
+  }
+  .dropdown-list {
+    @apply z-30 transition-[opacity,margin] opacity-0 hidden min-w-[15rem] bg-white shadow-md rounded-lg p-2 mt-2 dark:bg-gray-800 dark:border dark:border-gray-700 dark:divide-gray-700 after:h-4 after:absolute after:-bottom-4 after:start-0 after:w-full before:h-4 before:absolute before:-top-4 before:start-0 before:w-full;
+  }
+  .dropdown-text {
+    @apply flex items-center gap-x-3.5 py-2 px-3 rounded-lg text-sm text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-gray-300 dark:focus:bg-gray-700;
+  }
+  .card-product {
+    @apply px-2 py-2 xl:pb-6 pb-16 bg-white shadow-sm rounded overflow-hidden;
+  }
+  .card-product__thumbnail {
+    @apply lg:w-[264px] md:w-full max-w-full aspect-square rounded-[10px] overflow-hidden;
+  }
+  .card-product__headline {
+    @apply font-bold text-[15px] mt-5;
+  }
+  .card-product__price {
+    @apply font-bold mt-2 text-sm text-[#00171F];
+  }
+  .card-product__stick {
+    @apply cursor-pointer absolute bottom-2 right-2 w-[47px] h-[47px] bg-blue-1000 rounded-[20px];
+  }
+  .card-product__ico {
+    @apply w-[27px] h-auto absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
+  }
+  .pagination {
+    @apply flex items-center gap-x-1;
+  }
+  .pagination__btn {
+    @apply min-h-[38px] min-w-[38px] py-2 px-2.5 inline-flex justify-center items-center gap-x-1.5 text-sm rounded-lg text-gray-800 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 disabled:opacity-50 disabled:pointer-events-none dark:text-white dark:hover:bg-white/10 dark:focus:bg-white/10;
+  }
+  .pagination__item {
+    @apply min-h-[34px] min-w-[34px] aspect-square flex justify-center items-center p-2 text-sm rounded-lg focus:outline-none disabled:opacity-50 disabled:pointer-events-none hover:bg-blue-1000 hover:text-white text-blue-1000 rounded-lg transition-all text-lg font-bold;
+  }
+  .pagination__item[aria-current="page"] {
+    @apply bg-blue-1000 text-white disabled:opacity-100;
+  }
+  .card-review {
+    @apply bg-[#EEEEF0] rounded-xl lg:w-[412px] w-[300px] min-h-[207px] py-6 px-6 shadow-md;
+  }
+  .card-review__context {
+    @apply text-base leading-normal;
+  }
+  .card-review__line {
+    background-image: linear-gradient(
+      to right,
+      #3734a9,
+      #7063c0,
+      #a095d6,
+      #cfc9eb,
+      rgba(255, 255, 255, 0.5)
+    );
+    @apply my-5 max-w-[84px] h-[2px];
+  }
+  .card-review__title {
+    @apply font-bold text-base mb-1;
+  }
+  .card-review__desc {
+    @apply text-sm text-gray-500;
+  }
+  .card-review__avatar {
+    @apply rounded-full overflow-hidden w-[60px] aspect-square;
+  }
+  .carousel-slider .flickity-page-dots {
+    @apply -bottom-[30%]
+  }
+  .carousel-slider .flickity-page-dots .dot{
+    @apply rounded-full bg-gray-600 w-3 h-3 mx-2;
+  }
+  .carousel-slider .flickity-page-dots .dot.is-selected{
+    @apply bg-blue-1000 w-[30px] h-[12px] rounded-md;
+  }
+  .accordion-item__btn{
+    @apply flex justify-between items-start font-semibold text-[22px] disabled:opacity-50 disabled:pointer-events-none
+  }
+  .accordion-item{
+    @apply bg-white rounded-[10px] py-4 px-8
+  }
+  .accordion-item__context{
+    @apply w-full overflow-hidden transition-[height] duration-150 text-base
+  }
+}
