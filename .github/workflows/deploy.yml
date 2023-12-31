@@ -3,21 +3,21 @@ name: GitHub Pages
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   deploy:
     runs-on: ubuntu-18.04
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout 
         uses: actions/checkout@v2
 
-      - name: Setup Node 🔧
+      - name: Setup Node 
         uses: actions/setup-node@v2
         with:
-          node-version: 14
+          node-version: 16.x
 
-      - name: Cache dependencies 🗄️
+      - name: Cache dependencies 
         uses: actions/cache@v2
         with:
           path: ~/.npm
@@ -25,12 +25,12 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      - name: Install and build 🔧
+      - name: Install and build 
         run: |
           npm ci
           npm run build
 
-      - name: Deploy 🚀
+      - name: Deploy 
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
